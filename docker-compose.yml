@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: registry.hub.docker.com/vbloise3/helloecs
+    ports:
+      - "80:8000"
+    logging:
+      driver: awslogs
+      options: 
+        awslogs-group: ec2-tutorial
+        awslogs-region: us-east-1
+        awslogs-stream-prefix: web
